@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <h1>Word tarnslator</h1>
+    <TranslateForm v-on:formSubmit="translateText"></TranslateForm>
   </div>
 </template>
 
 <script>
+import TranslateForm from './components/TranslateForm'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    TranslateForm
+  },
+  methods: {
+    translateText:function(text) {
+      alert(text);
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
