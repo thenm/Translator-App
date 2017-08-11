@@ -14,7 +14,10 @@ export default {
   },
   methods: {
     translateText:function(text) {
-      alert(text);
+      this.$http.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20170809T024436Z.ed96144aef01a3f0.cf565bb240ce6807a3b27658fb23e9a65ec43153&lang=pt&text='+text)
+      .then((response) => {
+        console.log(response);
+      });
     }
   }
 }
